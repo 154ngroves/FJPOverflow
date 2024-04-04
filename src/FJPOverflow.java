@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 public class FJPOverflow {
     public static final int TASKS_PER_ITERATION = 100;
     public static final int TASK_DURATION_MS = 5;
-    public static final int ITERATION_DELAY_MS = 100; //Try increment this value if RC is not decrementing
+    public static final int ITERATION_DELAY_MS = 100; //Try increment this value if RC is not decreasing
     public static final int THREAD_KEEP_ALIVE_MS = 10; //Low keep alive time to trigger frequents pool resize
     public static final int MAX_CAP = 0x7fff; //(32767) Same as ForkJoinPool.MAX_CAP
 
@@ -154,7 +154,7 @@ public class FJPOverflow {
     }
 
     protected static class Options {
-        private boolean forceCtl;
+        private boolean forceCtl = false;
 
         Options(String[] args) {
             for (String arg : args) {
