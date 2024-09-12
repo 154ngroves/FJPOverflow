@@ -1,4 +1,5 @@
 # ForkJoinPool RC overflow
+JDK bug ticket: https://bugs.openjdk.org/browse/JDK-8330017
 
 JDK version: 17.0.10\
 ForkJoinPool could stop executing tasks due to ctl field Release Count (RC) overflow.\
